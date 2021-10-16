@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import MovieList from "./Components/MovieList/MovieList";
+import requests from './Auth/TMDB_API/request';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <h1>Nteflix clone</h1> */}
+      <MovieList title="Trending Movie" fetchURL={requests.fetchTrending}/>
+      <MovieList title="Netflix Orignal" fetchURL={requests.fetchNetflixOrignal}/>
+      <MovieList title="Top Rated Movie" fetchURL={requests.fetchTopRated}/>
+      <MovieList title="Action Movie" fetchURL={requests.fetchActionMovies}/>
+      <MovieList title="Comedy Movie" fetchURL={requests.fetchComedyMovies}/>
+      <MovieList title="Horror Movie" fetchURL={requests.fetchHorrorMovies}/>
+      <MovieList title="Romance Movie" fetchURL={requests.fetchRomanceMovies}/>
+      <MovieList title="Documentaries Movie" fetchURL={requests.fetchDocumentaries}/>
+
     </div>
   );
 }
