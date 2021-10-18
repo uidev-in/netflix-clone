@@ -2,12 +2,14 @@ import './App.css';
 import MovieList from "./Components/MovieList/MovieList";
 import requests from './Auth/TMDB_API/request';
 import Banner from './Components/Banner/Banner';
+import Navbar from './Components/Navbar/Navbar';
 
 
 function App() {
   
   return (
     <div className="App">
+      <Navbar/>
       <Banner/>
       {/* <h1>Nteflix clone</h1> */}
       <MovieList title="Trending Movie" fetchURL={requests.fetchTrending} isPopular={true}/>
