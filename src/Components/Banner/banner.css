@@ -1,6 +1,7 @@
 .banner{
     width: 100%;
-    height:60px;
+    object-fit: contain;
+    height: 600px;
 }
 
 .banner-content{
@@ -16,7 +17,8 @@
 }
 .movie-desc{
     font-size: 1.25rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
+    max-width: 60%;
 }
 .btn{
     width: 120px;
@@ -45,4 +47,8 @@ margin-right: 0.5rem;
 .btn:hover{
     opacity: 1;
     transition: ease-in-out 0.5s;
+}
+.banner-fade{
+    height: 15rem;
+    background: linear-gradient(180deg,transparent,rgba(37,37,37,0.5),#000);
 }

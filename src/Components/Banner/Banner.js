@@ -27,7 +27,15 @@ function Banner(){
 
     console.log('Banner data :',movie);
 
-
+    //Truncate Movie Description
+    function truncateString(str, num) {
+        if (str?.length > num) {
+            console.log('str length:',str.length)
+          return str.slice(0, num) + "...";
+        } else {
+          return str;
+        }
+      }
 
     return(
         <>
@@ -37,16 +45,16 @@ function Banner(){
                     backgroundSize:'cover',
                     backgroundImage:`url(https://image.tmdb.org/t/p/original/${movie?.backdrop_path})`,
                     backgroundPosition:'center center',
-                    height:'60vh',
                     }}>
                 <div className="banner-content">
                     <h1 className="movie-title">{movie?.title || movie?.original_title ||movie?.name}</h1>
-                    <p className="movie-desc">{movie?.overview}</p>
+                    <p className="movie-desc">{truncateString(movie?.overview,180)}</p>
                     <div className="movie-buttons">
                         <button className="btn"><span class="fas fa-play "></span> Play</button>
                         <button className="btn bg-light"><span class="fas fa-info-circle "></span> More Info</button>
                     </div>
                 </div>
+                <div className="banner-fade"></div>
             </div>
         </>
     )
