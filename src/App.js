@@ -1,13 +1,16 @@
 import './App.css';
 import MovieList from "./Components/MovieList/MovieList";
 import requests from './Auth/TMDB_API/request';
+import Banner from './Components/Banner/Banner';
 
 
 function App() {
+  
   return (
     <div className="App">
+      <Banner/>
       {/* <h1>Nteflix clone</h1> */}
-      <MovieList title="Trending Movie" fetchURL={requests.fetchTrending}/>
+      <MovieList title="Trending Movie" fetchURL={requests.fetchTrending} isPopular={true}/>
       <MovieList title="Netflix Orignal" fetchURL={requests.fetchNetflixOrignal}/>
       <MovieList title="Top Rated Movie" fetchURL={requests.fetchTopRated}/>
       <MovieList title="Action Movie" fetchURL={requests.fetchActionMovies}/>

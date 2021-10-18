@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react';
 import axios from '../../Auth/TMDB_API/axios';
 import  "../MovieList/movieList.css";
 
-function MovieList({title,fetchURL}) 
+function MovieList({title,fetchURL,isPopular}) 
 {
     const base_url=`https://image.tmdb.org/t/p/original/`;
     const [movies, setMovies] = useState([]);
@@ -32,8 +32,9 @@ function MovieList({title,fetchURL})
                     {
                         movies.map(movie => (
                            <img 
-                           className="poster"
-                           src={`${base_url}${movie.poster_path}`} 
+                           key={movie.id}
+                           className={`poster ${isPopular && "large_poster"}`}
+                           src={`${base_url}${isPopular?movie.backdrop_path : movie.poster_path}`} 
                            alt={movie.title}/> 
                         ))
                     }
