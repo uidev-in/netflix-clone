@@ -11,7 +11,7 @@ nav{
     transition: ease-in 0.5s;
 }
 .sticky_nav{
-    background-color: #222;
+    background-color: #000;
 }
 .logo{
     position: fixed;
